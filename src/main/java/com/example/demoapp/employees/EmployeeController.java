@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmployeeController {
     @GetMapping("/employees")
     public EmployeeResponse[] listEmployee() {
-        return new EmployeeResponse[]{new EmployeeResponse()};
+        EmployeeResponse employee001 = new EmployeeResponse();
+        employee001.setId(1);
+        employee001.setName("benjamas");
+        EmployeeResponse employee002 = new EmployeeResponse();
+        employee001.setId(2);
+        employee001.setName("benjamas 2");
+        return new EmployeeResponse[]{employee001, employee002};
     }
 }
