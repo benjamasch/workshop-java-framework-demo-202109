@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EmployeeController {
 
+    @Autowired
+    private EmployeeService employeeService;
+
     @GetMapping("/employees")
     public EmployeeResponse[] listEmployee() {
         EmployeeResponse employee001 = new EmployeeResponse();
@@ -22,9 +25,10 @@ public class EmployeeController {
     public EmployeeResponse getEmployeeById(@PathVariable String id) {
 //       Validate input
 //       Claening data
-        EmployeeResponse employee001 = new EmployeeResponse();
-        employee001.setId(Integer.parseInt(id));
-        employee001.setName("benjamas");
-        return employee001;
+        EmployeeResponse reponse = employeeService.getById(Integer.parseInt(id));
+//        EmployeeResponse employee001 = new EmployeeResponse();
+//        employee001.setId(Integer.parseInt(id));
+//        employee001.setName("benjamas");
+        return reponse;
     }
 }
