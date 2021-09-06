@@ -32,7 +32,7 @@ public class EmployeeControllerWebMvcTest {
         mockResponse.setName("Mock name");
         when(employeeService.getById(1)).thenReturn(mockResponse);
         // Act
-        MvcResult result = mvc.perform(get("employees/" + id))
+        MvcResult result = mvc.perform(get("/employees/" + id))
                 .andExpect(status().isOk())
                 .andReturn();
         // check response body

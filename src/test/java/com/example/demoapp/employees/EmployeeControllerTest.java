@@ -17,7 +17,7 @@ public class EmployeeControllerTest {
     @Test
     public void listEmployee() {
         // Act
-        EmployeeRespons[] results = restTemplate.getForObject("/employees", EmployeeResponse[].class);
+        EmployeeResponse[] results = restTemplate.getForObject("/employees", EmployeeResponse[].class);
 
         // Assert
         assertEquals(2, results.length);
@@ -28,9 +28,9 @@ public class EmployeeControllerTest {
     @Test
     public void getEmployeeById() {
         // Act
-        EmployeeRespons results = restTemplate.getForObject("/employees/1", EmployeeResponse.class);
+        EmployeeResponse results = restTemplate.getForObject("/employees/1", EmployeeResponse.class);
         // Assert
-        assertEquals(1, results[0].getId());
-        assertEquals("benjamas", results[0].getName());
+        assertEquals(1, results.getId());
+        assertEquals("benjamas", results.getName());
     }
 }

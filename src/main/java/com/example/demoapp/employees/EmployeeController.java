@@ -3,6 +3,7 @@ package com.example.demoapp.employees;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 public class EmployeeController {
@@ -16,8 +17,8 @@ public class EmployeeController {
         employee001.setId(1);
         employee001.setName("benjamas");
         EmployeeResponse employee002 = new EmployeeResponse();
-        employee001.setId(2);
-        employee001.setName("benjamas 2");
+        employee002.setId(2);
+        employee002.setName("benjamas 2");
         return new EmployeeResponse[]{employee001, employee002};
     }
 
