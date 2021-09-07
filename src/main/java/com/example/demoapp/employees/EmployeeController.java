@@ -26,10 +26,10 @@ public class EmployeeController {
     public EmployeeResponse getEmployeeById(@PathVariable String id) {
 //       Validate input
 //       Claening data
-        EmployeeResponse reponse = employeeService.getById(Integer.parseInt(id));
+        EmployeeResponse response = employeeService.getById(Integer.parseInt(id));
 //        EmployeeResponse employee001 = new EmployeeResponse();
 //        employee001.setId(Integer.parseInt(id));
 //        employee001.setName("benjamas");
-        return reponse;
+        return response;
     }
 }
